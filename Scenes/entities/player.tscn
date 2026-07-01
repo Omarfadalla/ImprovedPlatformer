@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d31btfs3henlk"]
+
+[ext_resource type="Script" uid="uid://dorvx2t31a51" path="res://Scenes/entities/player.gd" id="1_rd5lp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdkcu"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1952328181]
+script = ExtResource("1_rd5lp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1130095728]
+shape = SubResource("CapsuleShape2D_rdkcu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=59086993]
+zoom = Vector2(3, 3)
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=2088650548]
+wait_time = 0.5
+one_shot = true
