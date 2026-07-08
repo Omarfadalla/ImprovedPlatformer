@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dl28087jsr2to"]
 
 [ext_resource type="Texture2D" uid="uid://nss02ym145bd" path="res://graphics/fire/default.png" id="1_afbqg"]
+[ext_resource type="Script" uid="uid://bpgysem6gabxk" path="res://Scenes/bullets/bullet.gd" id="1_vwfc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwfc7"]
 size = Vector2(6, 2)
 
 [node name="Bullet" type="Area2D" unique_id=494214445]
+script = ExtResource("1_vwfc7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1254266530]
 texture = ExtResource("1_afbqg")
