@@ -6,6 +6,19 @@ var jump_strength = 400
 var gravity := 1000
 signal shoot(pos:Vector2,dir:Vector2)
 
+
+const gun_pointing_animations = {
+	Vector2i(1,0):   0,
+	Vector2i(1,1):   1,
+	Vector2i(0,1):   2,
+	Vector2i(-1,1):  3,
+	Vector2i(-1,0):  4,
+	Vector2i(-1,-1): 5,
+	Vector2i(0,-1):  6,
+	Vector2i(1,-1):  7,
+	
+}
+
 func get_input():
 	direction_x = Input.get_axis("left","right")
 	if Input.is_action_just_pressed("jump"):
@@ -35,4 +48,9 @@ func animation():
 		$AnimationPlayer.current_animation = "run" if direction_x else "idle"
 	else:
 		$AnimationPlayer.current_animation = "Jump"
+	
+	var pointer_dir = get_local_mouse_position().normalized()
+	var adjusted_dir = Vector2i(round(pointer_dir.x),round(pointer_dir.y))
+	$Torso.frame = gun_pointing_animations[adjusted_dir]
 	pass
+	

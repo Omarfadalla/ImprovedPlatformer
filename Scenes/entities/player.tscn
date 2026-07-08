@@ -98,3 +98,9 @@ vframes = 3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=994951586]
 libraries/ = SubResource("AnimationLibrary_h51i4")
 autoplay = &"idle"
+
+[node name="Torso" type="Sprite2D" parent="." unique_id=1137921674]
+position = Vector2(-1, -9)
+texture = ExtResource("2_br7jp")
+hframes = 8
+vframes = 3
