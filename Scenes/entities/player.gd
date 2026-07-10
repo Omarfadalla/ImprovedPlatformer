@@ -25,8 +25,12 @@ func get_input():
 		velocity.y = -jump_strength
 	if Input.is_action_just_pressed("shoot") and $ReloadTimer.time_left ==0:
 		shoot.emit(position, get_local_mouse_position().normalized())
+		$AnimationPlayer2.play("shoot scaling")
 		$ReloadTimer.start()
 		pass 
+	
+	
+	
 	pass
 
 func apply_gravity(delta):
@@ -39,6 +43,7 @@ func _physics_process( delta: float) -> void:
 	apply_gravity(delta)
 	move_and_slide()
 	animation()
+	update_crosshair()
 	pass
 
 
@@ -54,3 +59,7 @@ func animation():
 	$Torso.frame = gun_pointing_animations[adjusted_dir]
 	pass
 	
+	
+func update_crosshair():
+	$Marker.position = get_local_mouse_position().normalized() * 50
+	pass

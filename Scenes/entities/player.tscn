@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dorvx2t31a51" path="res://Scenes/entities/player.gd" id="1_rd5lp"]
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="2_br7jp"]
+[ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://graphics/ui/crosshair.png" id="3_pegit"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdkcu"]
 
@@ -76,7 +77,46 @@ _data = {
 &"run": SubResource("Animation_amhbr")
 }
 
+[sub_resource type="Animation" id="Animation_i3wst"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="Animation" id="Animation_0bti5"]
+resource_name = "shoot scaling"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.1, 0.1), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd4ua"]
+_data = {
+&"RESET": SubResource("Animation_i3wst"),
+&"shoot scaling": SubResource("Animation_0bti5")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1952328181]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_rd5lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1130095728]
@@ -84,13 +124,17 @@ shape = SubResource("CapsuleShape2D_rdkcu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=59086993]
 zoom = Vector2(3, 3)
+limit_left = -96
+limit_top = -32
+limit_right = 2780
+limit_bottom = 900
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=2088650548]
 wait_time = 0.5
 one_shot = true
 
 [node name="Legs" type="Sprite2D" parent="." unique_id=741314590]
-position = Vector2(0, -7)
+position = Vector2(-1, -8)
 texture = ExtResource("2_br7jp")
 hframes = 8
 vframes = 3
@@ -104,3 +148,10 @@ position = Vector2(-1, -9)
 texture = ExtResource("2_br7jp")
 hframes = 8
 vframes = 3
+
+[node name="Marker" type="Sprite2D" parent="." unique_id=317546943]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_pegit")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=656488907]
+libraries/ = SubResource("AnimationLibrary_jd4ua")
