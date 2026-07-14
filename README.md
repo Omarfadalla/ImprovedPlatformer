@@ -39,6 +39,8 @@ To deploy this project please clone this repo
 
 ## Feedback
 
+Ai use is declared according to hack Club requirements
+made specially for hack club !
 If you have any feedback, please reach out to us at github 
 this project was made to help me get started in making my own games !
 
