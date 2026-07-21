@@ -35,8 +35,19 @@ To deploy this project please clone this repo
 ```bash
   git clone [https://github.com/Omarfadalla/ImprovedPlatformer.git]
 ```
+ ## How To Use
+Open the Godot 4 app:
+Launch the Godot Editor and click import to import the project.
+Navigate to the cloned folder and select the project.godot file to import it.
+Click Import & Edit which wil open the project for you to be able to edit it and make it your own.
+To run the game press F5 (or click the Play button in the top right) to run the main scene and test the game to ensure it works properly.
 
+## Building from Source (Exporting the Project Inside Godot !)
 
+Inside the Godot editor, go to Project > Project Settings > Export
+You need to have an export template of your desired choice,choose one and export the project !
+Click Export Project and choose a destination folder and click Save.
+And Voila! you have made you OWN project!
 ## Feedback
 
 Ai use is declared according to hack Club requirements
