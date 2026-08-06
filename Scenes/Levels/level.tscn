@@ -2742,6 +2742,9 @@ gradient = SubResource("Gradient_jbixu")
 fill_from = Vector2(0.28478262, 0.65)
 fill_to = Vector2(1, 0.34130436)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhx7y"]
+size = Vector2(1760.5, 137)
+
 [node name="Level" type="Node2D" unique_id=2023480380]
 script = ExtResource("1_7x7pb")
 
@@ -2879,5 +2882,29 @@ position = Vector2(1420, 21)
 energy = 1.3
 texture = ExtResource("7_i5435")
 texture_scale = 0.8
+
+[node name="collison" type="Node2D" parent="." unique_id=1509803656]
+position = Vector2(1698, 519)
+rotation = 1.5707964
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collison" unique_id=1674787307]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="collison/StaticBody2D" unique_id=1689298603]
+position = Vector2(-1.9999969, 70)
+shape = SubResource("RectangleShape2D_lhx7y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="collison/StaticBody2D" unique_id=18515757]
+position = Vector2(-30.999912, 1817)
+shape = SubResource("RectangleShape2D_lhx7y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collison/StaticBody2D" unique_id=2075679106]
+position = Vector2(185.00006, 936)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_lhx7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collison/StaticBody2D" unique_id=1103496275]
+position = Vector2(-588.99994, 935)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_lhx7y")
 
 [connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]

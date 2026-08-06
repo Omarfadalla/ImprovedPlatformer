@@ -2,8 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://graphics/characters/drone.png" id="1_d15mb"]
 [ext_resource type="Script" uid="uid://b5kjy3i75n0vv" path="res://Scenes/entities/drone.gd" id="1_d61fh"]
+[ext_resource type="Shader" uid="uid://cssjsm5ohjcl4" path="res://Scenes/shaders/drone.tres" id="2_ikx5j"]
 [ext_resource type="Texture2D" uid="uid://bav7n447bnsa5" path="res://graphics/fire/explosion.png" id="3_ddc4h"]
 [ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://graphics/lights/main.png" id="4_0v417"]
+[ext_resource type="AudioStream" uid="uid://dtnqyh7corvdx" path="res://audio/explosion.wav" id="6_ifqen"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifqen"]
+shader = ExtResource("2_ikx5j")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d61fh"]
 atlas = ExtResource("1_d15mb")
@@ -137,21 +144,19 @@ collision_mask = 7
 script = ExtResource("1_d61fh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=962990966]
+material = SubResource("ShaderMaterial_ifqen")
 sprite_frames = SubResource("SpriteFrames_ifqen")
 autoplay = "default"
 frame_progress = 0.99075836
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=39174416]
-visible = false
 shape = SubResource("CircleShape2D_d15mb")
 
 [node name="Area_Detection" type="Area2D" parent="." unique_id=702533560]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Detection" unique_id=1216650455]
-visible = false
 shape = SubResource("CircleShape2D_d61fh")
 
 [node name="ExplosionSprite" type="Sprite2D" parent="." unique_id=1358418305]
@@ -164,12 +169,10 @@ libraries/ = SubResource("AnimationLibrary_ifqen")
 autoplay = &"red light"
 
 [node name="CollisionArea" type="Area2D" parent="." unique_id=682537847]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1929542586]
-visible = false
 light_mask = 0
 shape = SubResource("CircleShape2D_40acy")
 
@@ -179,6 +182,9 @@ color = Color(1, 0, 0, 1)
 energy = 2.5
 texture = ExtResource("4_0v417")
 texture_scale = 0.1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1564852805]
+stream = ExtResource("6_ifqen")
 
 [connection signal="body_entered" from="Area_Detection" to="." method="_on_area_detection_body_entered"]
 [connection signal="body_exited" from="Area_Detection" to="." method="_on_area_detection_body_exited"]

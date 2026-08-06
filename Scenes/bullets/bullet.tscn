@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://nss02ym145bd" path="res://graphics/fire/default.png" id="1_afbqg"]
 [ext_resource type="Script" uid="uid://bpgysem6gabxk" path="res://Scenes/bullets/bullet.gd" id="1_vwfc7"]
+[ext_resource type="AudioStream" uid="uid://tkjj51je3two" path="res://audio/laser.wav" id="3_sc5nk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwfc7"]
 size = Vector2(6, 2)
 
-[node name="Bullet" type="Area2D" unique_id=494214445]
+[node name="Bullet" type="Area2D" unique_id=494214445 groups=["Drones"]]
 collision_layer = 8
 collision_mask = 5
 script = ExtResource("1_vwfc7")
@@ -16,5 +17,8 @@ texture = ExtResource("1_afbqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1771080373]
 shape = SubResource("RectangleShape2D_vwfc7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1088695633]
+stream = ExtResource("3_sc5nk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
