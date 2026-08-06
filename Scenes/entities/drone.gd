@@ -3,7 +3,7 @@ extends CharacterBody2D
 var direction: Vector2 
 var speed: = 50
 var player: CharacterBody2D
-var health := 4
+var health := 3
 
 func _on_area_detection_body_entered(Player_body: CharacterBody2D) -> void:
 	
