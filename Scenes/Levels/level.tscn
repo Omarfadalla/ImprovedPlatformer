@@ -2765,6 +2765,42 @@ position = Vector2(168, 97)
 [node name="Drone" parent="Entities" unique_id=1300575863 instance=ExtResource("5_tq1so")]
 position = Vector2(353, 106)
 
+[node name="Drone2" parent="Entities" unique_id=825971935 instance=ExtResource("5_tq1so")]
+position = Vector2(543, 106)
+
+[node name="Drone3" parent="Entities" unique_id=427969099 instance=ExtResource("5_tq1so")]
+position = Vector2(693, 106)
+
+[node name="Drone4" parent="Entities" unique_id=129844430 instance=ExtResource("5_tq1so")]
+position = Vector2(620, 72)
+
+[node name="Drone5" parent="Entities" unique_id=1362100821 instance=ExtResource("5_tq1so")]
+position = Vector2(473, 105)
+
+[node name="Drone6" parent="Entities" unique_id=715700275 instance=ExtResource("5_tq1so")]
+position = Vector2(282, 105)
+
+[node name="Drone7" parent="Entities" unique_id=518509088 instance=ExtResource("5_tq1so")]
+position = Vector2(789, 73)
+
+[node name="Drone8" parent="Entities" unique_id=302971470 instance=ExtResource("5_tq1so")]
+position = Vector2(949, 73)
+
+[node name="Drone9" parent="Entities" unique_id=2058084887 instance=ExtResource("5_tq1so")]
+position = Vector2(892, 132)
+
+[node name="Drone10" parent="Entities" unique_id=154249036 instance=ExtResource("5_tq1so")]
+position = Vector2(1051, 72)
+
+[node name="Drone11" parent="Entities" unique_id=775451830 instance=ExtResource("5_tq1so")]
+position = Vector2(1135, 124)
+
+[node name="Drone12" parent="Entities" unique_id=703807893 instance=ExtResource("5_tq1so")]
+position = Vector2(1242, 66)
+
+[node name="Drone13" parent="Entities" unique_id=751398664 instance=ExtResource("5_tq1so")]
+position = Vector2(1309, 127)
+
 [node name="Bullets" type="Node2D" parent="." unique_id=1401560143]
 
 [connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]
