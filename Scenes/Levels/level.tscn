@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsobjr0cbuqfn" path="res://Scenes/entities/drone.tscn" id="5_tq1so"]
 [ext_resource type="Texture2D" uid="uid://6j2he24a4uda" path="res://graphics/lights/l3.png" id="6_lhx7y"]
 [ext_resource type="Texture2D" uid="uid://bo5lofshl02cv" path="res://graphics/lights/l0.png" id="7_i5435"]
+[ext_resource type="PackedScene" uid="uid://b7ca5gvkysl31" path="res://Scenes/entities/HUD.tscn" id="8_i5435"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tq1so"]
 texture = ExtResource("3_yjxcc")
@@ -2906,5 +2907,7 @@ shape = SubResource("RectangleShape2D_lhx7y")
 position = Vector2(-588.99994, 935)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_lhx7y")
+
+[node name="HUD" parent="." unique_id=37943473 instance=ExtResource("8_i5435")]
 
 [connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]

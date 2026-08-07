@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b7ca5gvkysl31"]
+
+[ext_resource type="Script" uid="uid://jxabdd6pnjtd" path="res://Scenes/entities/HUD.gd" id="1_x32jm"]
+[ext_resource type="FontFile" uid="uid://b7egek52ofejk" path="res://Better VCR 9.0.1.ttf" id="2_nlt2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otq36"]
+bg_color = Color(0.2982114, 0.7089178, 0, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1347380406]
+process_mode = 3
+script = ExtResource("1_x32jm")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=737234880]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 56.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="KillLabel" type="Label" parent="MarginContainer" unique_id=1005122371]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nlt2q")
+theme_override_font_sizes/font_size = 32
+text = "Drones killed: 0 / 0"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=2070419657]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 48.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer2" unique_id=9048257]
+custom_minimum_size = Vector2(200, 24)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nlt2q")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/background = SubResource("StyleBoxFlat_otq36")
+max_value = 3.0
+value = 3.0
+
+[node name="ResultLabel" type="Label" parent="." unique_id=2110410041]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 64
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1

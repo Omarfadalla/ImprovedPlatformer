@@ -1,12 +1,14 @@
 extends CharacterBody2D
-
 var direction_x: float
 var speed = 110
 var jump_strength = 400
 var gravity := 1000
 signal shoot(pos:Vector2,dir:Vector2)
-
-
+signal died
+signal health_changed(current_health:int, max_health:int)
+var max_health := 3
+var health := max_health
+var is_dead := false
 const gun_pointing_animations = {
 	Vector2i(1,0):   0,
 	Vector2i(1,1):   1,
@@ -18,7 +20,17 @@ const gun_pointing_animations = {
 	Vector2i(1,-1):  7,
 	
 }
-
+func _ready() -> void:
+	add_to_group("Player")
+func hit() -> void:
+	if is_dead:
+		return
+	health -= 1
+	health_changed.emit(health, max_health)
+	if health <= 0:
+		is_dead = true
+		died.emit()
+		queue_free()
 func get_input():
 	direction_x = Input.get_axis("left","right")
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -32,11 +44,9 @@ func get_input():
 	
 	
 	pass
-
 func apply_gravity(delta):
 	velocity.y += gravity * delta
 	pass
-
 func _physics_process( delta: float) -> void:
 	get_input()
 	velocity.x = direction_x *  speed
@@ -45,8 +55,6 @@ func _physics_process( delta: float) -> void:
 	animation()
 	update_crosshair()
 	pass
-
-
 func animation():
 	$Legs.flip_h = direction_x < 0
 	if is_on_floor():
