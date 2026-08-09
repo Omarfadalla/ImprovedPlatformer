@@ -4,6 +4,7 @@
 A brief description of what this project does and why it mas made and incomplete
 
 
+<img width="3312" height="692" alt="CleanShot 2026-08-09 at 16 41 53@2x" src="https://github.com/user-attachments/assets/16ce71b2-4840-41b4-b3f3-1da07881f4f8" />
 
 
 ## Project Overview
@@ -49,6 +50,9 @@ You need to have an export template of your desired choice,choose one and export
 Click Export Project and choose a destination folder and click Save.
 And Voila! you have made you OWN project!
 ## Feedback
+
+<img width="460" height="482" alt="CleanShot 2026-08-09 at 16 42 27@2x" src="https://github.com/user-attachments/assets/e15d7992-cada-431d-a6af-2bef3399ae9f" />
+
 
 Ai use is declared according to hack Club requirements
 made specially for hack club !
