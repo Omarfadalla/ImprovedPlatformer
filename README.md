@@ -21,7 +21,8 @@ This project consists of:
 * **Mouse:** Aiming
 * **Left Mouse Click:** Shooting
 
-
+## Problems Faced and How I Fixed Them :
+The Player aiming animations were not responsive but I tried using positions to make it smoother instead of free mouse rotation 
 
 ## Deployment And Local Setup
 
@@ -36,5 +37,11 @@ git clone [https://github.com/Omarfadalla/ImprovedPlatformer.git](https://github
  Check Out The Game On ITCH.IO >> https://omarfadalla.itch.io/platformer-style-game-incomplete
 
 
+Ai use is declared according to hack Club requirements
+AI was used to help me fix the player animation positions to fix the player animations!
+
+made specially for hack club !
+
+If you have any feedback, please reach out to us at github 
 
 
