@@ -4,7 +4,7 @@ A medieval style  2D pixel art game built from scratch in Godot 4 to help me lea
 
 <img width="3312" height="692" alt="Project Banner" src="https://github.com/user-attachments/assets/16ce71b2-4840-41b4-b3f3-1da07881f4f8" />
 
-##The  Tech Stack
+## The  Tech Stack
 * **Engine Used :** Godot 4.6
 * **Languages :** GDScript and GD shaders (JavaScript)
 * **Assets:** Custom 2D Pixel Art
