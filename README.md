@@ -9,7 +9,7 @@ A medieval style  2D pixel art game built from scratch in Godot 4 to help me lea
 * **Languages :** GDScript and GD shaders (JavaScript)
 * **Assets:** Custom 2D Pixel Art
 
-##Project Overview
+## Project Overview
 This project consists of:
 * **Fully Animated Player Motion And Aiming:** The player is fully animated and has a full animated shooting mechanic.
 * **TileMap System :** The level is designed using Godot's built in tile map layer to ensure high quality level and collisions.
