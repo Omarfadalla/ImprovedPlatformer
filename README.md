@@ -31,7 +31,10 @@ Open the Godot 4 app: Launch the Godot Editor and click import to import the pro
 ### 2. Clone the Repository
 To clone this project locally, just run :
 ```bash
-git clone [https://github.com/Omarfadalla/ImprovedPlatformer.git](https://github.com/Omarfadalla/ImprovedPlatformer.git)```
+git clone [https://github.com/Omarfadalla/ImprovedPlatformer.git](https://github.com/Omarfadalla/ImprovedPlatformer.git)
+```
+ Check Out The Game On ITCH.IO >> https://omarfadalla.itch.io/platformer-style-game-incomplete
+
 
 
 
